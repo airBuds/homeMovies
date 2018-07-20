@@ -22,7 +22,11 @@ $(document).ready(function () {
         // Creating an AJAX call for the specific movie being clicked on by the user
         $.get(queryURL).then(function (response) {
                 console.log(response);
-        });
+        });    
     };
+
+    // GoogleAPI
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
+    type="text/javascript"></script>
 
 });
