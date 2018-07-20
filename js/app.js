@@ -13,16 +13,44 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
 
+    data = firebase.database();
 
-    //this function will grab the movie data via ajax request from OMDB
-    function movieData() {
-        var movie = $(this).attr("data-name");
-        var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    //event listener to grab input fields and push them to the database
+    $("#watchIt").on("click", function (event) {
+        event.preventDefault();
+        console.log("click");
 
-        // Creating an AJAX call for the specific movie being clicked on by the user
-        $.get(queryURL).then(function (response) {
-                console.log(response);
-        });
-    };
+        //grabbing input
+        movieName = $("#whatmovie").val().trim();
+        movieWhere = $("#wheremovie").val().trim();
+        movieWhen = $("#whenmovie").val().trim();
+        movieWho = $("#whomovie").val().trim();
+        console.log(movieName);
+
+        //pushing to the database
+        data.ref().push({
+            name: movieName,
+            where: movieWhere,
+            when: movieWhen,
+            who: movieWho
+
+        })
+
+        $("#whatmovie").val("");
+        $("#wheremovie").val("");
+        $("#whenmovie").val("");
+        $("#whomovie").val("");
+    });
+
+    // //this function will grab the movie data via ajax request from OMDB
+    // function movieData() {
+    //     var movie = $(this).attr("data-name");
+    //     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+    //     // Creating an AJAX call for the specific movie being clicked on by the user
+    //     $.get(queryURL).then(function (response) {
+    //             console.log(response);
+    //     });
+    // };
 
 });
