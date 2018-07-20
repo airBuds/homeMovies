@@ -35,12 +35,18 @@ $(document).ready(function () {
             who: movieWho
 
         })
-
+        //clears out input fields when clicked
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
         $("#whomovie").val("");
     });
+
+    data.ref().on("child_added", function(snapshot){
+
+        $("#nowplaying").prepend(`<div><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p><p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></div>`);
+
+    })
 
     // //this function will grab the movie data via ajax request from OMDB
     // function movieData() {
