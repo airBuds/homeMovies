@@ -18,7 +18,6 @@ $(document).ready(function () {
     //event listener to grab input fields and push them to the database
     $("#watchIt").on("click", function (event) {
         event.preventDefault();
-        console.log("click");
 
         //grabbing input
         movieName = $("#whatmovie").val().trim();
