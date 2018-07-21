@@ -41,14 +41,14 @@ $(document).ready(function () {
         $("#whomovie").val("");
     });
 
-    data.ref().on("child_added", function(snapshot) {
+    data.ref().on("child_added", function (snapshot) {
 
         $("#nowplaying").prepend(`<div><button class='doStuff' data-search='${snapshot.val().name}'><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p>
         <p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></button></div>`);
     })
 
     //this function will grab the movie data via ajax request from OMDB
-    $(document).on('click', '.doStuff', function(event) {
+    $(document).on('click', '.doStuff', function (event) {
         event.preventDefault();
         //grabs movie name from the button that the movie is on the DOM
         var movie = $(this).data('search');
@@ -58,26 +58,22 @@ $(document).ready(function () {
         $.get(omdbURL).then(function (response) {
             $('#moviedata').text(response.Plot);
             console.log(response);
-            
-            
-        //Definining Variable: map
-        var map;
-        function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-        }
-        initMap();
-            
-            
+
+
         });
     });
 
-});
+     //Definining Variable: map
 
-
-
-
+     function initMap() {
+         map = new google.maps.Map(document.getElementById('map'), {
+             center: {
+                 lat: 30.267153,
+                 lng: -97.7430608
+             },
+             zoom: 11
+         });
+     }
+     initMap();
 
 });
