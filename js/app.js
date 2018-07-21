@@ -49,22 +49,25 @@ $(document).ready(function () {
         $("#whomovie").val("");
     });
 
-    data.ref().on("child_added", function(snapshot){
+    data.ref().on("child_added", function(snapshot) {
 
-        $("#nowplaying").prepend(`<div><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p><p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></div>`);
-
+        $("#nowplaying").prepend(`<div><button class='doStuff' data-search='${snapshot.val().name}'><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p>
+        <p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></button></div>`);
     })
 
-    // //this function will grab the movie data via ajax request from OMDB
-    // function movieData() {
-    //     var movie = $(this).attr("data-name");
-    //     var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    //this function will grab the movie data via ajax request from OMDB
+    $(document).on('click', '.doStuff', function(event) {
+        event.preventDefault();
+        //grabs movie name from the button that the movie is on the DOM
+        var movie = $(this).data('search');
+        var omdbURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=trilogy";
 
-    //     // Creating an AJAX call for the specific movie being clicked on by the user
-    //     $.get(queryURL).then(function (response) {
-    //             console.log(response);
-    //     });
-    // };
+        // Creating an AJAX call for the specific movie being clicked on by the user
+        $.get(omdbURL).then(function (response) {
+            $('#moviedata').text(response.Plot);
+            console.log(response);
+        });
+    });
 
 
 
