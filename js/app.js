@@ -20,13 +20,6 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("click");
 
-
-        // Creating an AJAX call for the specific movie being clicked on by the user
-        $.get(queryURL).then(function (response) {
-                console.log(response);
-        });    
-    };
-
         //grabbing input
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
