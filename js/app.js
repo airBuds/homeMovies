@@ -58,17 +58,25 @@ $(document).ready(function () {
         $.get(omdbURL).then(function (response) {
             $('#moviedata').text(response.Plot);
             console.log(response);
-        });
-    });
-
-});
-var map;
-      function initMap() {
+            
+            
+        //Definining Variable: map
+        var map;
+        function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 8
         });
-      }
+        }
+        initMap();
+            
+            
+        });
+    });
+
+});
+
+
 
 
 
