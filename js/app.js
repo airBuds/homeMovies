@@ -62,7 +62,6 @@ $(document).ready(function () {
 
         });
     });
-
      //Definining Variable: map
 
      function initMap() {
@@ -76,8 +75,4 @@ $(document).ready(function () {
      }
      initMap();
 
-<<<<<<< HEAD
 });
-=======
-
->>>>>>> 496fe1e3007a55043ef3d01a46819cf43c997dee
