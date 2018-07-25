@@ -30,6 +30,29 @@
     <!-- BOOSTRAP CORE CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!--Google API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
+        type="text/javascript"></script>
+
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -86,46 +109,25 @@
         <!-- /#page-content-wrapper -->
         <!-- /#wrapper -->
 
+        <!--Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js">
+        </script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- GOOGLE MAP -->
-        <div class="mapouter">
-            <div class="gmap_canvas">
-                <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <a href="https://www.maps-erstellen.de"></a>
-            </div>
-            <style>
-                .mapouter {
-                    text-align: right;
-                    height: 500px;
-                    width: 600px;
-                }
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
 
-                .gmap_canvas {
-                    overflow: hidden;
-                    background: none;
-                    height: 500px;
-                    width: 600px;
-                }
-            </style>
-        </div>
+        <div id="map"></div>
 
-
-        < /html>
-
-            <!--Bootstrap core JavaScript -->
-            < script src="vendor/jquery/jquery.min.js">
-                </script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-                <script>
-                    $("#menu-toggle").click(function (e) {
-                        e.preventDefault();
-                        $("#wrapper").toggleClass("toggled");
-                    });
-                </script>
-
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
