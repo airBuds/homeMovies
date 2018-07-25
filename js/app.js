@@ -42,8 +42,13 @@ $(document).ready(function () {
 
     data.ref().on("child_added", function (snapshot) {
 
-        $("#nowplaying").prepend(`<div><button class='doStuff' data-search='${snapshot.val().name}'><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p>
-        <p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></button></div>`);
+         $("#nowplaying").prepend(`<div><button class='doStuff' id='moviecard' style='width:100%'
+        data-search='${snapshot.val().name}'>
+        <p class='infoheader'><u>We're watching:</u></p><p id='movielogs'>${snapshot.val().name}</p>
+        <p class='infoheader'><u>Right here:</u></p><p id='movielogs'>${snapshot.val().where}</p>
+        <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</p>
+        <p class='infoheader'><u>Your host is:</u></p><p id='movielogs'>${snapshot.val().who}</p>
+        </button></div>`);
     })
 
     //this function will grab the movie data via ajax request from OMDB
