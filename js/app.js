@@ -71,6 +71,15 @@ $(document).ready(function () {
 
         });
     });
+    
+    //Menu Movement
+              $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+    
+    
+    
     //Definining Variable: map
 
     var map, infoWindow;
