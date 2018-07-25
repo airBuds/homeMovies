@@ -1,50 +1,131 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Home Movies</title>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Favicon-->
     <link rel="icon" href="assets/images/favicon.ico" type="image/gif" sizes="16x16">
     <!--CSS RESET-->
-    <link rel="sourcesheet" href="style/reset.css">
+    <link rel="stylesheet" href="./style/reset.css">
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <!--CSS STYLE-->
-    <link rel="sourcesheet" href="style/style.css">
-
-
-    <!--Firebase-->
+    <link rel="stylesheet" href="./style/style.css">
+    <!--FIREBASE-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <!--Google API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
+        type="text/javascript"></script>
+    <!-- BOOSTRAP CORE CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
-<body class="text-center container-fluid">
-    <h1 class="jumbotron">Home Movies</h1>
-    <!-- <img src="assets/images/mcguirk.gif"> -->
-    <div class="input-group">
-        <div class="input-group-prepend"></div>
-        <input type="text" class="form-control" id="whatmovie" placeholder="What are you watching?">
-        <input type="text" class="form-control" id="wheremovie" placeholder="Where are you watching it?">
-        <input type="text" class="form-control" id="whenmovie" placeholder="What time does it start?">
-        <input type="text" class="form-control" id="whomovie" placeholder="What's your name?">
-
-        <button class="btn-outline-info" id="watchIt">Let's watch a movie together</button>
-    </div>
-    <div id="nowplaying">
-
-    </div>
-    <div id="moviedata">
-    </div>
+<body>
+    </script>
 
 
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+
+                    <a href="#">
+                        Reset Search
+                    </a>
+                </li>
+                <li>
+                    <input type="text" class="form-control inputs" id="whomovie" placeholder="What's your name?">
+                </li>
+                <li>
+                    <input type="text" class="form-control inputs" id="whomovie" placeholder="Who is invited?">
+                    <li>
+                        <input type="text" class="form-control inputs" id="wheremovie" placeholder="Where are you watching it?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="whenmovie" placeholder="What time does it start?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="whatmovie" placeholder="What are you watching?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="submit" placeholder="Let's watch something?">
+                    </li>
+                    <li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Home Movies</h1>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+                <!--<p> Make sure to keep all page content within the 
+                <code>#page-content-wrapper</code>.</p> -->
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Let's watch something?</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        <!-- /#wrapper -->
 
 
-    <script type="text/javascript" src="js/app.js"></script>
+        <!-- GOOGLE MAP -->
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://www.maps-erstellen.de"></a>
+            </div>
+            <style>
+                .mapouter {
+                    text-align: right;
+                    height: 500px;
+                    width: 600px;
+                }
+
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none;
+                    height: 500px;
+                    width: 600px;
+                }
+            </style>
+        </div>
+
+
+        < /html>
+
+            <!--Bootstrap core JavaScript -->
+            < script src="vendor/jquery/jquery.min.js">
+                </script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                <script>
+                    $("#menu-toggle").click(function (e) {
+                        e.preventDefault();
+                        $("#wrapper").toggleClass("toggled");
+                    });
+                </script>
+
+
 </body>
+
+</html>

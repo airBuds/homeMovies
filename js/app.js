@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCe7HEqry2cnAfJli6gk2qJKg6eV_mFIUE",
@@ -33,8 +32,7 @@ $(document).ready(function () {
             where: movieWhere,
             when: movieWhen,
             who: movieWho
-
-        })
+        });
         //clears out input fields when clicked
         $("#whatmovie").val("");
         $("#wheremovie").val("");
@@ -42,7 +40,7 @@ $(document).ready(function () {
         $("#whomovie").val("");
     });
 
-    data.ref().on("child_added", function(snapshot){
+    data.ref().on("child_added", function (snapshot) {
 
         $("#nowplaying").prepend(`<div><p>${snapshot.val().name}</p><p>${snapshot.val().where}</p><p>${snapshot.val().when}</p><p>${snapshot.val().who}</p></div>`);
 
