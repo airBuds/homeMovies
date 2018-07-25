@@ -2,12 +2,37 @@ body {
 	overflow-x: hidden;
 }
 
-#map {
-	height: 500px;
-	width: 100%;
-	margin: 0;
-	padding: 0;
+#moviecard{
+    background: black;
+    color: white;
 }
+
+#movielogs{
+    font-size: 25px;
+    text-shadow: 0 0 5px red;
+    font-family: 'abril fatface', serif;
+}
+
+#map {
+    height: 100%;
+  }
+
+#nowplaying {
+    border-width: 5px;
+    border: solid 10px black;
+    height: 450px;
+    overflow: scroll;
+    padding: 0;
+}
+
+.infoheader{
+    text-shadow: 0 0 5px yellow;
+    font-family: 'Monoton', cursive;
+    background: black;
+    font-size: 30px;
+
+}
+
 
 #wrapper {
 	padding-left: 0;
