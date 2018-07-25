@@ -126,5 +126,5 @@ $(document).ready(function () {
             'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
-
+    initMap()
 });

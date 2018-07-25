@@ -1,6 +1,6 @@
 body {
 	overflow-x: hidden;
-}
+	}
 
 #moviecard{
     background: black;
@@ -17,6 +17,13 @@ body {
     height: 100%;
   }
 
+.colheaders{
+	text-shadow: 0 0 5px yellow;
+    font-family: 'Monoton', cursive;
+    background: black;
+    font-size: 30px;
+}
+
 #nowplaying {
     border-width: 5px;
     border: solid 10px black;
@@ -27,7 +34,7 @@ body {
 
 .infoheader{
     text-shadow: 0 0 5px yellow;
-    font-family: 'Monoton', cursive;
+    font-family: 'abril fatface', serif;
     background: black;
     font-size: 30px;
 
