@@ -108,7 +108,7 @@ $(document).ready(function () {
         });
 
         // Add a marker clusterer to manage the markers.
-        var MarkerCluster = new MarkerClusterer(map, markers,
+        var markerCluster = new MarkerClusterer(map, markers,
             {imagePath: 'js/markerimages/m'});
       }
       var locations = [
