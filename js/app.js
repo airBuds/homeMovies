@@ -52,11 +52,13 @@ $(document).ready(function () {
         event.preventDefault();
         //grabs movie name from the button that the movie is on the DOM
         var movie = $(this).data('search');
-        var omdbURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=trilogy";
+        var omdbURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
 
         // Creating an AJAX call for the specific movie being clicked on by the user
         $.get(omdbURL).then(function (response) {
-            $('#moviedata').text(response.Plot);
+
+            $('#moviedata').prepend(`<img src="${response.Poster}"></br>`);
+            $('#moviedata').append(response.Plot);
             console.log(response);
 
 
@@ -64,15 +66,15 @@ $(document).ready(function () {
     });
      //Definining Variable: map
 
-     function initMap() {
-         map = new google.maps.Map(document.getElementById('map'), {
-             center: {
-                 lat: 30.267153,
-                 lng: -97.7430608
-             },
-             zoom: 11
-         });
-     }
-     initMap();
+    //  function initMap() {
+    //      map = new google.maps.Map(document.getElementById('map'), {
+    //          center: {
+    //              lat: 30.267153,
+    //              lng: -97.7430608
+    //          },
+    //          zoom: 11
+    //      });
+    //  }
+    //  initMap();
 
 });
