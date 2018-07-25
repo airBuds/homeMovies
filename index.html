@@ -1,72 +1,123 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Home Movies</title>
-    <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Favicon-->
     <link rel="icon" href="assets/images/favicon.ico" type="image/gif" sizes="16x16">
     <!--CSS RESET-->
-    <link rel="sourcesheet" href="style/reset.css">
+    <link rel="stylesheet" href="./style/reset.css">
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <!--CSS STYLE-->
-    <link rel="sourcesheet" href="style/style.css">
-
-
-    <!--Firebase-->
+    <link rel="stylesheet" href="./style/style.css">
+    <!--FIREBASE-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-
     <!--jQuery CDN-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-
     <!--Google API-->
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
-    type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
+        type="text/javascript"></script>
+    <!--Google API-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
+        type="text/javascript"></script>
 
 
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
+
         #map {
-          height: 100%;
+            height: 100%;
         }
+
         /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-     </style>
+    </style>
 
 </head>
 
-<body class="text-center container-fluid">
-    <h1 class="jumbotron">Home Movies</h1>
-    <!-- <img src="assets/images/mcguirk.gif"> -->
-    <div class="input-group">
-        <div class="input-group-prepend"></div>
-        <input type="text" class="form-control" id="whatmovie" placeholder="What are you watching?">
-        <input type="text" class="form-control" id="wheremovie" placeholder="Where are you watching it?">
-        <input type="text" class="form-control" id="whenmovie" placeholder="What time does it start?">
-        <input type="text" class="form-control" id="whomovie" placeholder="What's your name?">
+<body>
+    </script>
 
-        <button class="btn-outline-info" id="watchIt">Let's watch a movie together</button>
-    </div>
-    <div id="nowplaying">
 
-    </div>
-    <div id="moviedata">
-    </div>
+    <div id="wrapper">
 
-    <div id="map"></div>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Reset Search
+                    </a>
+                </li>
+                <li>
+                    <input type="text" class="form-control inputs" id="whoname" placeholder="What's your name?">
+                </li>
+                <li>
+                    <input type="text" class="form-control inputs" id="whomovie" placeholder="Who is invited?">
+                    <li>
+                        <input type="text" class="form-control inputs" id="wheremovie" placeholder="Where are you watching it?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="whenmovie" placeholder="What time does it start?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="whatmovie" placeholder="What are you watching?">
+                    </li>
+                    <li>
+                        <input type="text" class="form-control inputs" id="submit" placeholder="Let's watch something?">
+                    </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/app.js"></script>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>Home Movies</h1>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+                <!--<p> Make sure to keep all page content within the 
+                <code>#page-content-wrapper</code>.</p> -->
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Let's watch something?</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        <!-- /#wrapper -->
+
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
+        <div id="map"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/app.js"></script>
 </body>
+
 </html>

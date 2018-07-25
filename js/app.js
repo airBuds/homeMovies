@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
 
-
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCe7HEqry2cnAfJli6gk2qJKg6eV_mFIUE",
@@ -20,6 +19,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         //grabbing input
+        userName = $("#whoname").val().trim();
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
         movieWhen = $("#whenmovie").val().trim();
@@ -28,13 +28,14 @@ $(document).ready(function () {
 
         //pushing to the database
         data.ref().push({
+            user: userName,
             name: movieName,
             where: movieWhere,
             when: movieWhen,
             who: movieWho
-
-        })
+        });
         //clears out input fields when clicked
+        $("#whoname").val("");
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
@@ -67,17 +68,17 @@ $(document).ready(function () {
 
         });
     });
-    //  Definining Variable: map
+    //Definining Variable: map
 
-     function initMap() {
-         map = new google.maps.Map(document.getElementById('map'), {
-             center: {
-                 lat: 30.267153,
-                 lng: -97.7430608
-             },
-             zoom: 11
-         });
-     }
-     initMap();
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: 30.267153,
+                lng: -97.7430608
+            },
+            zoom: 11
+        });
+    }
+    initMap();
 
 });
