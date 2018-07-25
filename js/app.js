@@ -19,6 +19,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         //grabbing input
+        userName = $("#whoname").val().trim();
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
         movieWhen = $("#whenmovie").val().trim();
@@ -27,12 +28,14 @@ $(document).ready(function () {
 
         //pushing to the database
         data.ref().push({
+            user: userName,
             name: movieName,
             where: movieWhere,
             when: movieWhen,
             who: movieWho
         });
         //clears out input fields when clicked
+        $("#whoname").val("");
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
