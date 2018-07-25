@@ -58,9 +58,9 @@ $(document).ready(function () {
         $.get(omdbURL).then(function (response) {
 
             $('#moviedata').prepend(`<img src="${response.Poster}"></br>`);
-            $('#moviedata').append(response.Plot);
+            $('#moviedata').append(`${response.Plot}</br>`);
+            $('#moviedata').append(`<a href='${response.Website}' target='_blank'>Click Here: Link To Website With Trailer</a>`);
             console.log(response);
-
 
         });
     });
