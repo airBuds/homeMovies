@@ -56,25 +56,28 @@ $(document).ready(function () {
 
         // Creating an AJAX call for the specific movie being clicked on by the user
         $.get(omdbURL).then(function (response) {
-
+            //this empties out the div so the movie info doesn't "stack" up on the page
+            $('#moviedata').text("");
+            //grabs the poster
             $('#moviedata').prepend(`<img src="${response.Poster}"></br>`);
+            //grabs the plot (short version)
             $('#moviedata').append(`${response.Plot}</br>`);
+            //grabs the websit and adds an anchor to the page.  When clicked opens in new tab
             $('#moviedata').append(`<a href='${response.Website}' target='_blank'>Click Here: Link To Website With Trailer</a>`);
-            console.log(response);
 
         });
     });
-     //Definining Variable: map
+    //  Definining Variable: map
 
-    //  function initMap() {
-    //      map = new google.maps.Map(document.getElementById('map'), {
-    //          center: {
-    //              lat: 30.267153,
-    //              lng: -97.7430608
-    //          },
-    //          zoom: 11
-    //      });
-    //  }
-    //  initMap();
+     function initMap() {
+         map = new google.maps.Map(document.getElementById('map'), {
+             center: {
+                 lat: 30.267153,
+                 lng: -97.7430608
+             },
+             zoom: 11
+         });
+     }
+     initMap();
 
 });
