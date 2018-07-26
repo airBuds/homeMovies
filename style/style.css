@@ -2,9 +2,28 @@ body {
 	overflow-x: hidden;
 	}
 
+
+/* Styling Elements on Page */
+.titletext{
+	color:white;
+}
+
 #moviecard{
     background: black;
-    color: white;
+	color: white;
+	
+}
+
+#moviebackground{
+	background-image: url(../assets/images/moviebackground.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+	background-position: center;
+	height: 200px;
+}
+
+#content{
+	text-align: center;
 }
 
 #movielogs{
@@ -13,10 +32,16 @@ body {
     font-family: 'abril fatface', serif;
 }
 
+.navcent{
+	width: 85%;
+}
+
 #map {
     height: 100%;
   }
-
+#mapbox{
+	padding: 0px;
+}
 .colheaders{
 	text-shadow: 0 0 5px yellow;
     font-family: 'Monoton', cursive;
@@ -27,7 +52,7 @@ body {
 #nowplaying {
     border-width: 5px;
     border: solid 10px black;
-    height: 450px;
+    height: 550px;
     overflow: scroll;
     padding: 0;
 }
@@ -41,6 +66,7 @@ body {
 }
 
 
+/* Pop out Menu functionality */
 #wrapper {
 	padding-left: 0;
 	-webkit-transition: all 0.5s ease;
@@ -145,7 +171,7 @@ body {
 		width: 250px;
 	}
 	#page-content-wrapper {
-		padding: 20px;
+		padding: 0px;
 		position: relative;
 	}
 	#wrapper.toggled #page-content-wrapper {
