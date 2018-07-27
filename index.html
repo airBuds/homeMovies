@@ -25,6 +25,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <!--Google API-->
+    <script src="js/markclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM2UWb8dM08lPjMcEcCFc_xWRn7UWVXY&callback=initMap"
         type="text/javascript"></script>
     <!--Google Fonts-->
@@ -37,32 +38,36 @@
     </script>
 
 
-    <div id="wrapper">
+    <div class="window" id="wrapper">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
+                <li class="sidebar-brand align-center" id="navcent">
                 </li>
 
                     <li>
-                    <input type="text" class="form-control inputs" id="whatmovie" placeholder="What are you watching?">
+                    <input type="text" class="form-control inputs navcent" id="whatmovie" placeholder="What are you watching?">
                     </li>
-                    <input type="text" class="form-control inputs" id="wheremovie" placeholder="Where are you watching it?">
+                    <input type="text" class="form-control inputs navcent" id="wheremovie" placeholder="Where are you watching?">
                     </li>
                     <li>
-                    <input type="time" class="form-control inputs" id="whenmovie" placeholder="What time does it start?">
+                    <input type="time" class="form-control inputs navcent" id="whenmovie" placeholder="What time does it start?">
                     </li>
                     <li>
                         <input type="date" class="form-control inputs" id="datemovie">
                     </li>
                     <li>
-                    <input type="text" class="form-control inputs" id="whomovie" placeholder="Who is invited?">
+                    <input type="text" class="form-control inputs navcent" id="whomovie" placeholder="Who's hosting?">
                     </li>
-
                     <li>
-                    <button class="btn-outline-info" id="watchIt">Let's watch a movie together</button>
+                    <button class="btn-outline-info form-control navcent" id="watchIt">Let's watch a movie together</button>
                     </li>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.</p>
 
             </ul>
         </div>
@@ -72,13 +77,9 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <h1>Home Movies</h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.</p>
+            <div class="container-fluid" id="moviebackground">
+                <h1 class="titletext">Home Movies</h1>
+
                 <!--<p> Make sure to keep all page content within the 
                 <code>#page-content-wrapper</code>.</p> -->
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Let's....watch? something?</a>
@@ -99,14 +100,17 @@
         Movie Info
     </div>
     </div>
-    <div class="row justify-content-md-center">
-    <div class="col">
+    <div class="row justify-content-md-center" id="content">
+    <div class="col-md-1 gutter"></div>
+    <div class="col-md-3" id="mapbox">
     <div id="map"></div>
     </div>
-    <div class="col" id="nowplaying">
+    <div class="col-md-4" id="nowplaying">
     </div>
-    <div class="col" id="moviedata">
+    <div class="col-md-4" id="moviedata">
     </div>
+
+
     </div>
     <div class= "row"></div>
         
