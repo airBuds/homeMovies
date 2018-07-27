@@ -6,13 +6,25 @@ body {
 /* Styling Elements on Page */
 .titletext{
 	color:white;
+	position: relative;
+	left:100px;
 }
 
 #moviecard{
     background: black;
 	color: white;
-	
 }
+
+#mapwarning{
+	z-index: 5;
+}
+
+.watchbtn{
+	position: relative;
+    bottom: -109px;
+    left: 100px;
+}
+
 
 #moviedata{
 	border-width: 5px;
@@ -52,9 +64,18 @@ body {
 
 .gutter{
 	background-image: url(../assets/images/moviebackground.jpg);
-	background-size: 1471%;
+	background-size: 1800%;
     background-repeat: no-repeat;
     background-position: bottom;
+}
+
+.bottombkgrnd{
+	background-image: url(../assets/images/moviebackground.jpg);
+	background-size: 1800%;
+    background-repeat: no-repeat;
+	background-position: bottom;
+	position:fixed;
+	height: 500px;
 }
 
 #mapbox{
@@ -65,6 +86,7 @@ body {
     overflow: scroll;
     padding: 0;
 }
+
 .colheaders{
 	text-shadow: 0 0 5px yellow;
     font-family: 'Monoton', cursive;
