@@ -8,6 +8,8 @@ body {
 	color:white;
 	position: relative;
 	left:100px;
+	font-family: 'Ultra', serif;
+	font-size: 70px;
 }
 
 #moviecard{
@@ -21,8 +23,11 @@ body {
 
 .watchbtn{
 	position: relative;
-    bottom: -109px;
-    left: 100px;
+    bottom: -59px;
+    left: 104px;
+    font-family: ultra;
+    font-size: 20px;
+    text-shadow: 0ch 10px 10px black;
 }
 
 
@@ -37,7 +42,7 @@ body {
 }
 
 #moviebackground{
-	background-image: url(../assets/images/moviebackground.jpg);
+	background-image: url(../assets/images/moviebackgroundtop.png);
     background-size: 100%;
     background-repeat: no-repeat;
 	background-position: center;
@@ -63,20 +68,20 @@ body {
   }
 
 .gutter{
-	background-image: url(../assets/images/moviebackground.jpg);
-	background-size: 1800%;
+	background-image: url(../assets/images/moviebackgroundside.png);
+	background-size: 240%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
 }
 
-.bottombkgrnd{
+/* .bottombkgrnd{
 	background-image: url(../assets/images/moviebackground.jpg);
 	background-size: 1800%;
     background-repeat: no-repeat;
 	background-position: bottom;
 	position:fixed;
 	height: 500px;
-}
+} */
 
 #mapbox{
 	padding: 0px;
@@ -99,7 +104,8 @@ body {
     border: solid 10px black;
     height: 550px;
     overflow: scroll;
-    padding: 0;
+	padding: 0;
+	background: black;
 }
 
 .infoheader{
@@ -108,6 +114,20 @@ body {
     background: black;
     font-size: 30px;
 
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	/* background-color: black; */
+	text-align: center;
+	background-image: url(../assets/images/moviebackgroundbottom.png);
+	background-size: 1800%;
+    background-repeat: no-repeat;
+	background-position: bottom;
 }
 
 
