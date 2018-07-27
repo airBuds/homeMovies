@@ -51,6 +51,16 @@ $(document).ready(function () {
         <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</br>${snapshot.val().date}</p>
         <p class='infoheader'><u>Your host is:</u></p><p id='movielogs'>${snapshot.val().who}</p>
         </button></div>`);
+
+        var where = snapshot.val().where;
+
+        var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + where + "&key=AIzaSyCHGt8eFg_UB3LsbjtWbsjk-7wyBychILQ"
+
+        $.get(googleURL).then(function (thing){
+            console.log(thing.results[0].geometry.location);
+        })
+
+       
     })
 
     //this function will grab the movie data via ajax request from OMDB
@@ -71,14 +81,15 @@ $(document).ready(function () {
             //grabs the websit and adds an anchor to the page.  When clicked opens in new tab
             $('#moviedata').append(`<a href='${response.Website}' target='_blank'>Click Here: Link To Website With Trailer</a>`);
 
+
         });
+
     });
 
     //Menu Movement
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
-        console.log("Hello");
     });
 
 
