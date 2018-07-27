@@ -24,15 +24,14 @@ $(document).ready(function () {
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
         movieWhen = $("#whenmovie").val().trim();
-        movieDate = $("#datemovie").val().trim();
         movieWho = $("#whomovie").val().trim();
+        console.log(movieName);
 
         //pushing to the database
         data.ref().push({
             name: movieName,
             where: movieWhere,
             when: movieWhen,
-            date: movieDate,
             who: movieWho
         });
         //clears out input fields when clicked
@@ -40,7 +39,6 @@ $(document).ready(function () {
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
-        $("#datemovie").val("");
         $("#whomovie").val("");
     });
 
