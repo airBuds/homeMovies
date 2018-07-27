@@ -14,6 +14,16 @@ body {
 	
 }
 
+#moviedata{
+	border-width: 5px;
+    border: solid 10px black;
+    height: 550px;
+    overflow: scroll;
+	padding: 0;
+	background: black;
+	color: white;
+}
+
 #moviebackground{
 	background-image: url(../assets/images/moviebackground.jpg);
     background-size: 100%;
@@ -37,7 +47,12 @@ body {
 }
 
 #map {
-    height: 100%;
+	height: 100%;
+	border-width: 5px;
+    border: solid 10px black;
+    height: 550px;
+    overflow: scroll;
+    padding: 0;
   }
 #mapbox{
 	padding: 0px;
