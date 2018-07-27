@@ -22,14 +22,15 @@ $(document).ready(function () {
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
         movieWhen = $("#whenmovie").val().trim();
+        movieDate = $("#datemovie").val().trim();
         movieWho = $("#whomovie").val().trim();
-        console.log(movieName);
 
         //pushing to the database
         data.ref().push({
             name: movieName,
             where: movieWhere,
             when: movieWhen,
+            date: movieDate,
             who: movieWho
         });
         //clears out input fields when clicked
@@ -37,6 +38,7 @@ $(document).ready(function () {
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
+        $("#datemovie").val("");
         $("#whomovie").val("");
     });
 
@@ -46,7 +48,7 @@ $(document).ready(function () {
         data-search='${snapshot.val().name}'>
         <p class='infoheader'><u>We're watching:</u></p><p id='movielogs'>${snapshot.val().name}</p>
         <p class='infoheader'><u>Right here:</u></p><p id='movielogs'>${snapshot.val().where}</p>
-        <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</p>
+        <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</br>${snapshot.val().date}</p>
         <p class='infoheader'><u>Your host is:</u></p><p id='movielogs'>${snapshot.val().who}</p>
         </button></div>`);
     })
