@@ -1,5 +1,7 @@
 $(document).ready(function () {
+    var locations = [];
 
+    
 
     // Initialize Firebase
     var config = {
@@ -56,12 +58,17 @@ $(document).ready(function () {
 
         var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + where + "&key=AIzaSyCHGt8eFg_UB3LsbjtWbsjk-7wyBychILQ"
 
-        $.get(googleURL).then(function (thing){
-            console.log(thing.results[0].geometry.location);
+        $.get(googleURL).then(function (thing) {
+
+            locations.push(thing.results[0].geometry.location);
+        
+            initMap();
+
         })
 
-       
+
     })
+
 
     //this function will grab the movie data via ajax request from OMDB
     $(document).on('click', '.doStuff', function (event) {
@@ -113,24 +120,21 @@ $(document).ready(function () {
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function (location, i) {
+
+        locations.map(function (location, i) {
+
             return new google.maps.Marker({
                 position: location,
-                label: labels[i % labels.length]
+                map,
+                title: labels[i % labels.length]
             });
         });
 
         // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers, {
-            imagePath: 'js/markerimages/m'
-        });
+        // var markerCluster = new MarkerClusterer(map, markers, {
+        //     imagePath: 'js/markerimages/m'
+        // });
     }
-    var locations = [{
-            lat: 30.2849,
-            lng: -97.7341
-        }
-        
-    ]
 
     infoWindow = new google.maps.InfoWindow;
 
