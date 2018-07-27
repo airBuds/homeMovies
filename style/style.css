@@ -48,14 +48,22 @@ body {
 
 #map {
 	height: 100%;
+  }
+
+.gutter{
+	background-image: url(../assets/images/moviebackground.jpg);
+	background-size: 1471%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#mapbox{
+	padding: 0px;
 	border-width: 5px;
     border: solid 10px black;
     height: 550px;
     overflow: scroll;
     padding: 0;
-  }
-#mapbox{
-	padding: 0px;
 }
 .colheaders{
 	text-shadow: 0 0 5px yellow;
