@@ -47,7 +47,7 @@ $(document).ready(function () {
         $("#nowplaying").prepend(`<div><button class='doStuff' id='moviecard' style='width:100%'
         data-search='${snapshot.val().name}'>
         <p class='infoheader'><u>We're watching:</u></p><p id='movielogs'>${snapshot.val().name}</p>
-        <p class='infoheader'><u>Right here:</u></p><p id='moviewhere'>${snapshot.val().where}</p>
+        <p class='infoheader'><u>Right here:</u></p><p id='movielogs'>${snapshot.val().where}</p>
         <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</br>${snapshot.val().date}</p>
         <p class='infoheader'><u>Your host is:</u></p><p id='movielogs'>${snapshot.val().who}</p>
         </button></div>`);
