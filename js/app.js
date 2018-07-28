@@ -20,28 +20,33 @@ $(document).ready(function () {
     $("#watchIt").on("click", function (event) {
         event.preventDefault();
 
+
         //grabbing input
         movieName = $("#whatmovie").val().trim();
         movieWhere = $("#wheremovie").val().trim();
         movieWhen = $("#whenmovie").val().trim();
         movieWho = $("#whomovie").val().trim();
-        console.log(movieName);
+        movieDate = $("#datemovie").val().trim();
+
+        correctTime = moment(movieWhen, "HH:mm").format("hh:mm a");
 
         //pushing to the database
         data.ref().push({
             name: movieName,
             where: movieWhere,
-            when: movieWhen,
+            when: correctTime,
+            date: movieDate,
             who: movieWho
         });
         //clears out input fields when clicked
-        $("#whoname").val("");
+        $("#datemovie").val("");
         $("#whatmovie").val("");
         $("#wheremovie").val("");
         $("#whenmovie").val("");
         $("#whomovie").val("");
     });
 
+    // when a child is added to the page, this function grabs it from the data base and appends it to the DOM
     data.ref().on("child_added", function (snapshot) {
 
         $("#nowplaying").prepend(`<div><button class='doStuff' id='moviecard' style='width:100%'
@@ -51,15 +56,15 @@ $(document).ready(function () {
         <p class='infoheader'><u>Show starts at:</u><p id='movielogs'>${snapshot.val().when}</br>${snapshot.val().date}</p>
         <p class='infoheader'><u>Your host is:</u></p><p id='movielogs'>${snapshot.val().who}</p>
         </button></div>`);
-
+        //this sends an ajax requst to google for the location that the user entered and turns it into lat/lng to push to the array later
         var where = snapshot.val().where;
 
         var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + where + "&key=AIzaSyCHGt8eFg_UB3LsbjtWbsjk-7wyBychILQ"
 
         $.get(googleURL).then(function (thing) {
-
+            // "locations" is the array where the lat/lng is being pushed
             locations.push(thing.results[0].geometry.location);
-        
+            //calling function to append pins to the map
             initMap();
 
         })
