@@ -1,3 +1,3 @@
 # AirBuds
-Group Project 1: UT Coding Bootcamp May
+Group Project: UT Coding Bootcamp May
 https://airbuds.github.io/homeMovies/
